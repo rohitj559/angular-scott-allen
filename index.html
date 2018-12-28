@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app = "myApp">
+
+  <head>
+    <script data-require="angular.js@*" data-semver="4.0.0" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+    <script data-require="angular.js@*" data-semver="4.0.0" src="script.ts"></script>
+    <script data-require="angular.js@*" data-semver="4.0.0" src="system.config.js"></script>
+    <script data-require="angular.js@*" data-semver="4.0.0" src="tsconfig.json"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body >
+    <div ng-controller="myCtrl">
+    <h1>{{message}}</h1>
+    <b>{{person.firstName}}</b>
+    <b>{{person.lastName}}</b>
+    <div>
+      <img src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}">
+    </div>
+    </div>
+  </body>
+
+</html>
