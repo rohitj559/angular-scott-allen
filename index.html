@@ -29,6 +29,37 @@
     <!--</div>-->
 
     <!--activity 3-->
+    <!--<h1>{{message}}</h1>-->
+    <!--<div>{{error}}</div>-->
+
+    <!--<form name="searchUser" ng-submit="search(username)">-->
+    <!--  <input type="search" required placeholder="Username to find" ng-model="username">-->
+    <!--  <input type="submit" value="Search">-->
+    <!--</form>-->
+
+    <!--<div>-->
+    <!--<h2>{{user.name}}</h2>-->
+    <!--<img ng-src="{{user.avatar_url}}" title="{{user.name}}">-->
+    <!--</div>-->
+
+    <!--<table>-->
+    <!--  <thead>-->
+    <!--    <tr>-->
+    <!--      <th>Name</th>-->
+    <!--      <th>No of Stars</th>-->
+    <!--      <th>Language</th>-->
+    <!--    </tr>-->
+    <!--  </thead>-->
+    <!--  <tbody>-->
+    <!--    <tr ng-repeat="repo in repos">-->
+    <!--      <td>{{repo.name}}</td>-->
+    <!--      <td>{{repo.stargazers_count | number:1}}</td>-->
+    <!--      <td>{{repo.language}}</td>-->
+    <!--    </tr>-->
+    <!--  </tbody>-->
+    <!--</table>-->
+
+    <!--activity 4-->
     <h1>{{message}}</h1>
     <div>{{error}}</div>
 
@@ -39,8 +70,34 @@
 
     <div>
     <h2>{{user.name}}</h2>
-    <img ng-src="http://www.gravatar.com/avatar/{{user.gravatar_id}}" title="{{user.name}}">
+    <img ng-src="{{user.avatar_url}}" title="{{user.name}}">
     </div>
+
+    Order By:
+    <select ng-model="repoSortOrder">
+      <option value="+name">Name</option>
+      <option value="-stargazers_count">No of Stars</option>
+      <option value="+language">Language</option>
+    </select>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>No of Stars</th>
+          <th>Language</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--<tr ng-repeat="repo in repos | orderBy:'-stargazers_count'">-->
+        <!--or, if we want to use dynamic binding with 'Order By' list above-->
+        <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
+          <td>{{repo.name}}</td>
+          <td>{{repo.stargazers_count | number:1}}</td>
+          <td>{{repo.language}}</td>
+        </tr>
+      </tbody>
+    </table>
 </body>
 
 </html>
