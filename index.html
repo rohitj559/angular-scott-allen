@@ -10,68 +10,107 @@
 </head>
 
 <body ng-controller="myCtrl">
-    <!--activity 1-->
-    <!--<h1>{{message}}</h1>-->
-    <!--<b>{{person.firstName}}</b>-->
-    <!--<b>{{person.lastName}}</b>-->
-    <!--<div>-->
-    <!--  <img src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}">-->
-    <!--</div>-->
+  <!--activity 1-->
+  <!--<h1>{{message}}</h1>-->
+  <!--<b>{{person.firstName}}</b>-->
+  <!--<b>{{person.lastName}}</b>-->
+  <!--<div>-->
+  <!--  <img src="{{person.imageSrc}}" title="{{person.firstName}} {{person.lastName}}">-->
+  <!--</div>-->
 
-    <!--activity 2-->
-    <!--<h1>{{message}}</h1>-->
-    <!--<div>{{error}}</div>-->
+  <!--activity 2-->
+  <!--<h1>{{message}}</h1>-->
+  <!--<div>{{error}}</div>-->
 
-    <!--<h2>Name: {{user.name}}</h2>-->
-    <!--<div>Location: {{user.location}}</div>-->
-    <!--<div>-->
-    <!--  <img ng-src="{{user.avatar_url}}" title="{{user.name}}">-->
-    <!--</div>-->
+  <!--<h2>Name: {{user.name}}</h2>-->
+  <!--<div>Location: {{user.location}}</div>-->
+  <!--<div>-->
+  <!--  <img ng-src="{{user.avatar_url}}" title="{{user.name}}">-->
+  <!--</div>-->
 
-    <!--activity 3-->
-    <!--<h1>{{message}}</h1>-->
-    <!--<div>{{error}}</div>-->
+  <!--activity 3-->
+  <!--<h1>{{message}}</h1>-->
+  <!--<div>{{error}}</div>-->
 
-    <!--<form name="searchUser" ng-submit="search(username)">-->
-    <!--  <input type="search" required placeholder="Username to find" ng-model="username">-->
-    <!--  <input type="submit" value="Search">-->
-    <!--</form>-->
+  <!--<form name="searchUser" ng-submit="search(username)">-->
+  <!--  <input type="search" required placeholder="Username to find" ng-model="username">-->
+  <!--  <input type="submit" value="Search">-->
+  <!--</form>-->
 
-    <!--<div>-->
-    <!--<h2>{{user.name}}</h2>-->
-    <!--<img ng-src="{{user.avatar_url}}" title="{{user.name}}">-->
-    <!--</div>-->
+  <!--<div>-->
+  <!--<h2>{{user.name}}</h2>-->
+  <!--<img ng-src="{{user.avatar_url}}" title="{{user.name}}">-->
+  <!--</div>-->
 
-    <!--<table>-->
-    <!--  <thead>-->
-    <!--    <tr>-->
-    <!--      <th>Name</th>-->
-    <!--      <th>No of Stars</th>-->
-    <!--      <th>Language</th>-->
-    <!--    </tr>-->
-    <!--  </thead>-->
-    <!--  <tbody>-->
-    <!--    <tr ng-repeat="repo in repos">-->
-    <!--      <td>{{repo.name}}</td>-->
-    <!--      <td>{{repo.stargazers_count | number:1}}</td>-->
-    <!--      <td>{{repo.language}}</td>-->
-    <!--    </tr>-->
-    <!--  </tbody>-->
-    <!--</table>-->
+  <!--<table>-->
+  <!--  <thead>-->
+  <!--    <tr>-->
+  <!--      <th>Name</th>-->
+  <!--      <th>No of Stars</th>-->
+  <!--      <th>Language</th>-->
+  <!--    </tr>-->
+  <!--  </thead>-->
+  <!--  <tbody>-->
+  <!--    <tr ng-repeat="repo in repos">-->
+  <!--      <td>{{repo.name}}</td>-->
+  <!--      <td>{{repo.stargazers_count | number:1}}</td>-->
+  <!--      <td>{{repo.language}}</td>-->
+  <!--    </tr>-->
+  <!--  </tbody>-->
+  <!--</table>-->
 
-    <!--activity 4-->
-    <h1>{{message}}</h1>
-    <div>{{error}}</div>
+  <!--activity 4-->
+  <!--<h1>{{message}}</h1>-->
+  <!--<div>{{error}}</div>-->
 
-    <form name="searchUser" ng-submit="search(username)">
-      <input type="search" required placeholder="Username to find" ng-model="username">
-      <input type="submit" value="Search">
-    </form>
+  <!--<form name="searchUser" ng-submit="search(username)">-->
+  <!--  <input type="search" required placeholder="Username to find" ng-model="username">-->
+  <!--  <input type="submit" value="Search">-->
+  <!--</form>-->
 
-    <div>
+  <!--<div>-->
+  <!--<h2>{{user.name}}</h2>-->
+  <!--<img ng-src="{{user.avatar_url}}" title="{{user.name}}">-->
+  <!--</div>-->
+
+  <!--Order By:-->
+  <!--<select ng-model="repoSortOrder">-->
+  <!--  <option value="+name">Name</option>-->
+  <!--  <option value="-stargazers_count">No of Stars</option>-->
+  <!--  <option value="+language">Language</option>-->
+  <!--</select>-->
+
+  <!--<table>-->
+  <!--  <thead>-->
+  <!--    <tr>-->
+  <!--      <th>Name</th>-->
+  <!--      <th>No of Stars</th>-->
+  <!--      <th>Language</th>-->
+  <!--    </tr>-->
+  <!--  </thead>-->
+  <!--  <tbody>-->
+  <!--<tr ng-repeat="repo in repos | orderBy:'-stargazers_count'">-->
+  <!--or, if we want to use dynamic binding with 'Order By' list above-->
+  <!--    <tr ng-repeat="repo in repos | orderBy:repoSortOrder">-->
+  <!--      <td>{{repo.name}}</td>-->
+  <!--      <td>{{repo.stargazers_count | number:1}}</td>-->
+  <!--      <td>{{repo.language}}</td>-->
+  <!--    </tr>-->
+  <!--  </tbody>-->
+  <!--</table>-->
+
+  <!--activity 5-->
+  <h1>{{message}}</h1>
+  <div>{{error}}</div>
+
+  <form name="searchUser" ng-submit="search(username)">
+    <input type="search" required placeholder="Username to find" ng-model="username">
+    <input type="submit" value="Search">
+  </form>
+
+  <div ng-show="user">
     <h2>{{user.name}}</h2>
     <img ng-src="{{user.avatar_url}}" title="{{user.name}}">
-    </div>
 
     Order By:
     <select ng-model="repoSortOrder">
@@ -79,25 +118,28 @@
       <option value="-stargazers_count">No of Stars</option>
       <option value="+language">Language</option>
     </select>
+  </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>No of Stars</th>
-          <th>Language</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!--<tr ng-repeat="repo in repos | orderBy:'-stargazers_count'">-->
-        <!--or, if we want to use dynamic binding with 'Order By' list above-->
-        <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
-          <td>{{repo.name}}</td>
-          <td>{{repo.stargazers_count | number:1}}</td>
-          <td>{{repo.language}}</td>
-        </tr>
-      </tbody>
-    </table>
+  <table ng-show="user">
+    <!--or-->
+  <!--<table ng-hide="!user">-->
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>No of Stars</th>
+        <th>Language</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--<tr ng-repeat="repo in repos | orderBy:'-stargazers_count'">-->
+      <!--or, if we want to use dynamic binding with 'Order By' list above-->
+      <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
+        <td>{{repo.name}}</td>
+        <td>{{repo.stargazers_count | number:1}}</td>
+        <td>{{repo.language}}</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 
 </html>
