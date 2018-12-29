@@ -1,6 +1,6 @@
 // Code goes here
 
-// activity 1
+// // activity 1
 // var app = angular.module('myApp', []);
 
 // app.controller('myCtrl', function($scope) {
@@ -19,7 +19,7 @@
 //     $scope.person = person;
 //   })}());
 
-// activity 2
+// // activity 2
 // shorter syntax
 // (function(){
 //   angular.module('myApp', []).controller('myCtrl', function($scope, $http) {
@@ -52,16 +52,49 @@
     // $scope.message = "Github Viewer!!";
 //   })}());
 
+// //activity 3
+// (function(){
+//   angular.module('myApp', []).controller('myCtrl', function($scope, $http) {
 
+//     var onUserComplete = function(response){
+//       $scope.user = response.data
+//       $http.get($scope.user.repos_url)
+//       .then(onRepos, onError)
+//     };
+
+//     var onRepos = function(response){
+//       $scope.repos = response.data
+//     };
+
+//     var onError = function(reason){
+//       $scope.error = "Could not fetch the data"
+//     };
+
+//     $scope.search = function(username){
+//       $http.get("https://api.github.com/users/" + username)
+//           .then(onUserComplete, onError);
+//     };
+
+//     $scope.message = "Github Viewer!!";
+//   })}());
+
+// activity 4
 (function(){
   angular.module('myApp', []).controller('myCtrl', function($scope, $http) {
 
     var onUserComplete = function(response){
       $scope.user = response.data
+      $http.get($scope.user.repos_url)
+      .then(onRepos, onError)
+    };
+
+    var onRepos = function(response){
+      $scope.repos = response.data
+      $scope.repoSortOrder = "-stargazers_count"
     };
 
     var onError = function(reason){
-      $scope.error = "Could not fetch the user"
+      $scope.error = "Could not fetch the data"
     };
 
     $scope.search = function(username){
