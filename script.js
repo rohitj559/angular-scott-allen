@@ -90,7 +90,6 @@
 
     var onRepos = function(response){
       $scope.repos = response.data
-      $scope.repoSortOrder = "-stargazers_count"
     };
 
     var onError = function(reason){
@@ -103,4 +102,5 @@
     };
 
     $scope.message = "Github Viewer!!";
+    $scope.repoSortOrder = "-stargazers_count";
   })}());
