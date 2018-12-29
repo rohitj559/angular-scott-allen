@@ -32,7 +32,7 @@
   <!--<h1>{{message}}</h1>-->
   <!--<div>{{error}}</div>-->
 
-  <!--<form name="searchUser" ng-submit="search(username)">-->
+  <!--<form name="searchUser" ng-submit="search()">-->
   <!--  <input type="search" required placeholder="Username to find" ng-model="username">-->
   <!--  <input type="submit" value="Search">-->
   <!--</form>-->
@@ -63,14 +63,14 @@
   <!--<h1>{{message}}</h1>-->
   <!--<div>{{error}}</div>-->
 
-  <!--<form name="searchUser" ng-submit="search(username)">-->
+  <!--<form name="searchUser" ng-submit="search()">-->
   <!--  <input type="search" required placeholder="Username to find" ng-model="username">-->
   <!--  <input type="submit" value="Search">-->
   <!--</form>-->
 
   <!--<div>-->
-  <!--<h2>{{user.name}}</h2>-->
-  <!--<img ng-src="{{user.avatar_url}}" title="{{user.name}}">-->
+  <!--  <h2>{{user.name}}</h2>-->
+  <!--  <img ng-src="{{user.avatar_url}}" title="{{user.name}}">-->
   <!--</div>-->
 
   <!--Order By:-->
@@ -89,8 +89,8 @@
   <!--    </tr>-->
   <!--  </thead>-->
   <!--  <tbody>-->
-  <!--<tr ng-repeat="repo in repos | orderBy:'-stargazers_count'">-->
-  <!--or, if we want to use dynamic binding with 'Order By' list above-->
+      <!--<tr ng-repeat="repo in repos | orderBy:'-stargazers_count'">-->
+      <!--or, if we want to use dynamic binding with 'Order By' list above-->
   <!--    <tr ng-repeat="repo in repos | orderBy:repoSortOrder">-->
   <!--      <td>{{repo.name}}</td>-->
   <!--      <td>{{repo.stargazers_count | number:1}}</td>-->
@@ -103,7 +103,7 @@
   <!--<h1>{{message}}</h1>-->
   <!--<div>{{error}}</div>-->
 
-  <!--<form name="searchUser" ng-submit="search(username)">-->
+  <!--<form name="searchUser" ng-submit="search()">-->
   <!--  <input type="search" required placeholder="Username to find" ng-model="username">-->
   <!--  <input type="submit" value="Search">-->
   <!--</form>-->
@@ -121,7 +121,7 @@
   <!--</div>-->
 
   <!--<table ng-show="user">-->
-    <!--or-->
+  <!--or-->
   <!--<table ng-hide="!user">-->
   <!--  <thead>-->
   <!--    <tr>-->
@@ -131,8 +131,8 @@
   <!--    </tr>-->
   <!--  </thead>-->
   <!--  <tbody>-->
-      <!--<tr ng-repeat="repo in repos | orderBy:'-stargazers_count'">-->
-      <!--or, if we want to use dynamic binding with 'Order By' list above-->
+  <!--<tr ng-repeat="repo in repos | orderBy:'-stargazers_count'">-->
+  <!--or, if we want to use dynamic binding with 'Order By' list above-->
   <!--    <tr ng-repeat="repo in repos | orderBy:repoSortOrder">-->
   <!--      <td>{{repo.name}}</td>-->
   <!--      <td>{{repo.stargazers_count | number:1}}</td>-->
@@ -145,7 +145,7 @@
   <h1>{{message}}</h1>
   <div>{{error}}</div>
 
-  <form name="searchUser" ng-submit="search(username)">
+  <form name="searchUser" ng-submit="search()">
     <input type="search" required placeholder="Username to find" ng-model="username">
     <input type="submit" value="Search">
   </form>
