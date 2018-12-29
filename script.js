@@ -55,13 +55,19 @@
 
 (function(){
   angular.module('myApp', []).controller('myCtrl', function($scope, $http) {
-    $http.get("https://api.github.com/users/rohitj559")
-        .then(function(response){
-          $scope.user = response.data;
-        })
-        .catch(function(reason){
-          $scope.error = "Could not fetch the user";
-        });
 
-  $scope.message = "Github Viewer!!";
+    var onUserComplete = function(response){
+      $scope.user = response.data
+    };
+
+    var onError = function(reason){
+      $scope.error = "Could not fetch the user"
+    };
+
+    $scope.search = function(username){
+      $http.get("https://api.github.com/users/" + username)
+          .then(onUserComplete, onError);
+    };
+
+    $scope.message = "Github Viewer!!";
   })}());
