@@ -1,0 +1,30 @@
+<div>
+  <h2>{{user.name}}</h2>
+  <img ng-src="{{user.avatar_url}}" title="{{user.name}}"> Order By:
+  <select ng-model="repoSortOrder">
+    <option value="+name">Name</option>
+    <option value="-stargazers_count">No of Stars</option>
+    <option value="+language">Language</option>
+  </select>
+</div>
+
+<table>
+  <!--or-->
+  <!--<table ng-hide="!user">-->
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>No of Stars</th>
+      <th>Language</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--<tr ng-repeat="repo in repos | orderBy:'-stargazers_count'">-->
+    <!--or, if we want to use dynamic binding with 'Order By' list above-->
+    <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
+      <td>{{repo.name}}</td>
+      <td>{{repo.stargazers_count | number:1}}</td>
+      <td>{{repo.language}}</td>
+    </tr>
+  </tbody>
+</table>
