@@ -155,6 +155,9 @@
       $log.info("Searching for " + $scope.username);
       $http.get("https://api.github.com/users/" + $scope.username)
           .then(onUserComplete, onError);
+      if(countdowninterval){
+        $interval.cancel(countdowninterval);
+      }
     };
 
     var decremenetCountDown = function(){
@@ -164,8 +167,9 @@
       }
     };
 
+    countdowninterval = null;
     var startCountDown = function(){
-      $interval(decremenetCountDown, 1000, $scope.countDown);
+      countdowninterval = $interval(decremenetCountDown, 1000, $scope.countDown);
     };
 
   $scope.username = "angular";
