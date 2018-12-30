@@ -135,7 +135,7 @@
 
 // activity 6
 (function(){
-  angular.module('myApp', []).controller('myCtrl', function($scope, $http, $interval) {
+  angular.module('myApp', []).controller('myCtrl', function($scope, $http, $interval, $log) {
 
     var onUserComplete = function(response){
       $scope.user = response.data
@@ -151,7 +151,8 @@
       $scope.error = "Could not fetch the data"
     };
 
-    $scope.search = function(username){
+    $scope.search = function(){
+      $log.info("Searching for " + $scope.username);
       $http.get("https://api.github.com/users/" + $scope.username)
           .then(onUserComplete, onError);
     };
