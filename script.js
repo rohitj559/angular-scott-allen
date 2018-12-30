@@ -158,6 +158,7 @@
       if(countdowninterval){
         $interval.cancel(countdowninterval);
       }
+      $scope.countDown = null;
     };
 
     var decremenetCountDown = function(){
