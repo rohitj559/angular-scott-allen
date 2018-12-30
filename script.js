@@ -9,16 +9,16 @@
 //   });
 
 // syntax 2
-(function(){
-  angular.module('myApp', []).controller('myCtrl', function($scope) {
-    var person = {
-      firstName: "Steve",
-      lastName: "Jobs",
-      imageSrc: "https://specials-images.forbesimg.com/imageserve/5b8576db31358e0429c734e3/416x416.jpg?background=000000&cropX1=211&cropX2=2381&cropY1=900&cropY2=3072"
-    };
+// (function(){
+//   angular.module('myApp', []).controller('myCtrl', function($scope) {
+//     var person = {
+//       firstName: "Steve",
+//       lastName: "Jobs",
+//       imageSrc: "https://specials-images.forbesimg.com/imageserve/5b8576db31358e0429c734e3/416x416.jpg?background=000000&cropX1=211&cropX2=2381&cropY1=900&cropY2=3072"
+//     };
 
-    $scope.person = person;
-  })}());
+//     $scope.person = person;
+//   })}());
 
 // // activity 2
 // shorter syntax
@@ -135,7 +135,7 @@
 
 // activity 6
 (function(){
-  angular.module('myApp', []).controller('myCtrl', function($scope, $http) {
+  angular.module('myApp', []).controller('myCtrl', function($scope, $http, $interval) {
 
     var onUserComplete = function(response){
       $scope.user = response.data
@@ -156,6 +156,20 @@
           .then(onUserComplete, onError);
     };
 
+    var decremenetCountDown = function(){
+      $scope.countDown -= 1;
+      if($scope.countDown < 1){
+        $scope.search($scope.username);
+      }
+    };
+
+    var startCountDown = function(){
+      $interval(decremenetCountDown, 1000, $scope.countDown);
+    };
+
+  $scope.username = "angular";
   $scope.message = "Github Viewer!!";
   // $scope.repoSortOrder = "-stargazers_count";
+  $scope.countDown = 5;
+  startCountDown();
 })}());
